@@ -6,11 +6,10 @@ class UserController
     public function create(){
         $errors=$this->validate();
         $_POST['errors']=[];
-        if($errors)
-        {
+        if($errors) {
             $_POST['errors']= $errors;
-
-        }else{
+        }
+        else{
             $data=[
                 "name"=>filter_var($_POST['name'],FILTER_SANITIZE_STRING),
                 "address"=>filter_var($_POST['address'],FILTER_SANITIZE_STRING),
