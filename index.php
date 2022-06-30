@@ -120,5 +120,10 @@
     <script src="assets/js/jquery.payform.min.js" charset="utf-8"></script>
     <script src="assets/js/script.js"></script>
 </body>
-
+<!--
+examples:
+Visa 			 4716108999716531 257
+Master Card		 5281037048916168 043
+American Express 342498818630298  3156
+-->
 </html>
