@@ -4,6 +4,8 @@ $(function() {
     var cardNumber = $('#cardNumber');
     var cardNumberField = $('#card-number-field');
     var CVV = $("#cvv");
+    var expiry_month = $("#expiry_month");
+    var expiry_year = $("#expiry_year");
     var mastercard = $("#mastercard");
     var confirmButton = $('#confirm-purchase');
     var visa = $("#visa");
@@ -48,7 +50,8 @@ $(function() {
         cardErrorContainer.addClass('hidden');
 
         var isCardValid = $.payform.validateCardNumber(cardNumber.val());
-        var isCvvValid = $.payform.rvalidateCardCVC(CVV.val());
+        var isCvvValid  = $.payform.validateCardCVC(CVV.val());
+        var isDateValid = $.payform.validateCardExpiry(expiry_month.val(), expiry_year.val());
 
         if(owner.val().length < 5){
             cardErrorContainer.html('Wrong owner name').removeClass('hidden');
@@ -56,6 +59,8 @@ $(function() {
             cardErrorContainer.html('Wrong card number').removeClass('hidden');
         } else if (!isCvvValid) {
             cardErrorContainer.html('Wrong CVV').removeClass('hidden');
+        }else if (!isDateValid) {
+            cardErrorContainer.html('Wrong Expiry Date').removeClass('hidden');
         } else {
             // Everything is correct.submit form.
             $('#register-form').append('<input type="hidden" name="is_credit_card_valid" value="1">');

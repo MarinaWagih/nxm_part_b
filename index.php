@@ -36,6 +36,12 @@
                 <?php }else{ ?>
                     <div class="payment">
                         <form method="post" action="route.php?path=user-save" id="register-form"  enctype="multipart/form-data">
+                           <?php
+                           if(!isset($_SESSION)) session_start();
+
+                           $_SESSION['token'] = md5(uniqid(mt_rand(), true));
+                           ?>
+                            <input type="hidden" name="token" value="<?php echo $_SESSION['token'] ?>">
                             <div class="row">
                                 <div class="mb-3 name">
                                     <label for="name" class="form-label">Name</label>
@@ -69,7 +75,7 @@
                                 </div>
                                 <div class="form-group" id="expiration-date">
                                     <label>Expiration Date</label>
-                                    <select>
+                                    <select id="expiry_month">
                                         <option value="01">January</option>
                                         <option value="02">February </option>
                                         <option value="03">March</option>
@@ -83,14 +89,14 @@
                                         <option value="11">November</option>
                                         <option value="12">December</option>
                                     </select>
-                                    <select>
-                                        <option value="16"> 2016</option>
-                                        <option value="17"> 2017</option>
-                                        <option value="18"> 2018</option>
-                                        <option value="19"> 2019</option>
-                                        <option value="20"> 2020</option>
-                                        <option value="21"> 2021</option>
-                                        <option value="21"> 2022</option>
+                                    <select id="expiry_year">
+                                        <option value="22"> 2022</option>
+                                        <option value="23"> 2023</option>
+                                        <option value="24"> 2024</option>
+                                        <option value="25"> 2025</option>
+                                        <option value="26"> 2026</option>
+                                        <option value="27"> 2027</option>
+                                        <option value="28"> 2028</option>
                                     </select>
                                 </div>
                                 <div class="form-group" id="credit_cards">

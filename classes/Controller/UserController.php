@@ -22,6 +22,7 @@ class UserController
             $user->save($data);
             $_POST['success']= true;
         }
+        unset($_SESSION['token']);
         ob_start();
         include "index.php";
         $str=ob_get_clean();
