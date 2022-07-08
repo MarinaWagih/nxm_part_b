@@ -63,19 +63,19 @@
                             <div class="row">
                                 <div class="form-group owner">
                                     <label for="owner">Card Owner</label>
-                                    <input type="text" class="form-control" id="owner">
+                                    <input type="text" class="form-control" name="credit_card_name" id="owner">
                                 </div>
                                 <div class="form-group CVV">
                                     <label for="cvv">CVV</label>
-                                    <input type="text" class="form-control" id="cvv">
+                                    <input type="text" class="form-control" name="credit_card_cvv"  id="cvv">
                                 </div>
                                 <div class="form-group" id="card-number-field">
                                     <label for="cardNumber">Card Number</label>
-                                    <input type="text" class="form-control" id="cardNumber">
+                                    <input type="text" class="form-control" name="credit_card_number" id="cardNumber">
                                 </div>
                                 <div class="form-group" id="expiration-date">
                                     <label>Expiration Date</label>
-                                    <select id="expiry_month">
+                                    <select id="expiry_month" name="credit_card_expiration_month">
                                         <option value="01">January</option>
                                         <option value="02">February </option>
                                         <option value="03">March</option>
@@ -89,7 +89,7 @@
                                         <option value="11">November</option>
                                         <option value="12">December</option>
                                     </select>
-                                    <select id="expiry_year">
+                                    <select id="expiry_year"  name="credit_card_expiration_year">
                                         <option value="22"> 2022</option>
                                         <option value="23"> 2023</option>
                                         <option value="24"> 2024</option>

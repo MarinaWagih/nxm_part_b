@@ -2,8 +2,8 @@
 -- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Jun 30, 2022 at 11:04 AM
+-- Host: localhost
+-- Generation Time: Jul 08, 2022 at 04:42 AM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 7.4.23
 
@@ -28,12 +28,17 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `users` (
-  `id` int(10) UNSIGNED NOT NULL,
-  `name` varchar(50) NOT NULL,
-  `birthdate` date NOT NULL DEFAULT current_timestamp(),
-  `address` text NOT NULL,
-  `img` varchar(255) NOT NULL,
-  `is_credit_card_valid` tinyint(1) NOT NULL
+                         `id` int(10) UNSIGNED NOT NULL,
+                         `name` varchar(50) NOT NULL,
+                         `birthdate` date NOT NULL DEFAULT current_timestamp(),
+                         `address` text NOT NULL,
+                         `img` varchar(255) NOT NULL,
+                         `is_credit_card_valid` tinyint(1) NOT NULL,
+                         `credit_card_number` varchar(50) NOT NULL,
+                         `credit_card_name` varchar(50) NOT NULL,
+                         `credit_card_cvv` varchar(10) NOT NULL,
+                         `credit_card_expiration_month` varchar(2) NOT NULL,
+                         `credit_card_expiration_year` varchar(4) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
