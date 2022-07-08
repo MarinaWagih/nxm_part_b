@@ -45,15 +45,15 @@
                             <div class="row">
                                 <div class="mb-3 name">
                                     <label for="name" class="form-label">Name</label>
-                                    <input type="text" required class="form-control" name="name" id="name">
+                                    <input type="text" required class="form-control" name="name" id="name"  value="<?php echo !empty($_POST['name'])?$_POST['name']:"" ?>">
                                 </div>
                                 <div class="mb-3 birthdate">
                                     <label for="birthdate" class="form-label">BirthDate</label>
-                                    <input type="date" required class="form-control" name="birthdate" id="birthdate">
+                                    <input type="date" required class="form-control" name="birthdate" id="birthdate"  value="<?php echo !empty($_POST['birthdate'])?$_POST['birthdate']:"" ?>">
                                 </div>
                                 <div class="mb-3 address">
                                     <label for="address" class="form-label">Complete Address</label>
-                                    <input type="text" required class="form-control" name="address" id="address">
+                                    <input type="text" required class="form-control" name="address" id="address" value="<?php echo !empty($_POST['address'])?$_POST['address']:"" ?>">
                                 </div>
                                 <div class="mb-3 picture">
                                     <label for="img" class="form-label">Profile Picture</label>
@@ -63,40 +63,40 @@
                             <div class="row">
                                 <div class="form-group owner">
                                     <label for="owner">Card Owner</label>
-                                    <input type="text" class="form-control" name="credit_card_name" id="owner">
+                                    <input type="text" class="form-control" name="credit_card_name" id="owner" value="<?php echo !empty($_POST['credit_card_name'])?$_POST['credit_card_name']:"" ?>">
                                 </div>
                                 <div class="form-group CVV">
                                     <label for="cvv">CVV</label>
-                                    <input type="text" class="form-control" name="credit_card_cvv"  id="cvv">
+                                    <input type="text" class="form-control" name="credit_card_cvv"  id="cvv"  value="<?php echo !empty($_POST['credit_card_cvv'])?$_POST['credit_card_cvv']:"" ?>">
                                 </div>
                                 <div class="form-group" id="card-number-field">
                                     <label for="cardNumber">Card Number</label>
-                                    <input type="text" class="form-control" name="credit_card_number" id="cardNumber">
+                                    <input type="text" class="form-control" name="credit_card_number" id="cardNumber" value="<?php echo !empty($_POST['credit_card_number'])?$_POST['credit_card_number']:"" ?>">
                                 </div>
                                 <div class="form-group" id="expiration-date">
                                     <label>Expiration Date</label>
                                     <select id="expiry_month" name="credit_card_expiration_month">
-                                        <option value="01">January</option>
-                                        <option value="02">February </option>
-                                        <option value="03">March</option>
-                                        <option value="04">April</option>
-                                        <option value="05">May</option>
-                                        <option value="06">June</option>
-                                        <option value="07">July</option>
-                                        <option value="08">August</option>
-                                        <option value="09">September</option>
-                                        <option value="10">October</option>
-                                        <option value="11">November</option>
-                                        <option value="12">December</option>
+                                        <option value="01"  <?php echo !empty($_POST['credit_card_expiration_month'])&&$_POST['credit_card_expiration_month']=="01"?"selected":"" ?>>January</option>
+                                        <option value="02"  <?php echo !empty($_POST['credit_card_expiration_month'])&&$_POST['credit_card_expiration_month']=="02"?"selected":"" ?>>February </option>
+                                        <option value="03"  <?php echo !empty($_POST['credit_card_expiration_month'])&&$_POST['credit_card_expiration_month']=="03"?"selected":"" ?>>March</option>
+                                        <option value="04"  <?php echo !empty($_POST['credit_card_expiration_month'])&&$_POST['credit_card_expiration_month']=="04"?"selected":"" ?>>April</option>
+                                        <option value="05"  <?php echo !empty($_POST['credit_card_expiration_month'])&&$_POST['credit_card_expiration_month']=="05"?"selected":"" ?>>May</option>
+                                        <option value="06"  <?php echo !empty($_POST['credit_card_expiration_month'])&&$_POST['credit_card_expiration_month']=="06"?"selected":"" ?>>June</option>
+                                        <option value="07"  <?php echo !empty($_POST['credit_card_expiration_month'])&&$_POST['credit_card_expiration_month']=="07"?"selected":"" ?>>July</option>
+                                        <option value="08"  <?php echo !empty($_POST['credit_card_expiration_month'])&&$_POST['credit_card_expiration_month']=="08"?"selected":"" ?>>August</option>
+                                        <option value="09"  <?php echo !empty($_POST['credit_card_expiration_month'])&&$_POST['credit_card_expiration_month']=="09"?"selected":"" ?>>September</option>
+                                        <option value="10"  <?php echo !empty($_POST['credit_card_expiration_month'])&&$_POST['credit_card_expiration_month']=="10"?"selected":"" ?>>October</option>
+                                        <option value="11"  <?php echo !empty($_POST['credit_card_expiration_month'])&&$_POST['credit_card_expiration_month']=="11"?"selected":"" ?>>November</option>
+                                        <option value="12"  <?php echo !empty($_POST['credit_card_expiration_month'])&&$_POST['credit_card_expiration_month']=="12"?"selected":"" ?>>December</option>
                                     </select>
                                     <select id="expiry_year"  name="credit_card_expiration_year">
-                                        <option value="22"> 2022</option>
-                                        <option value="23"> 2023</option>
-                                        <option value="24"> 2024</option>
-                                        <option value="25"> 2025</option>
-                                        <option value="26"> 2026</option>
-                                        <option value="27"> 2027</option>
-                                        <option value="28"> 2028</option>
+                                        <option value="22" <?php echo !empty($_POST['credit_card_expiration_year'])&&$_POST['credit_card_expiration_year']=="22"?"selected":"" ?>> 2022</option>
+                                        <option value="23" <?php echo !empty($_POST['credit_card_expiration_year'])&&$_POST['credit_card_expiration_year']=="23"?"selected":"" ?>> 2023</option>
+                                        <option value="24" <?php echo !empty($_POST['credit_card_expiration_year'])&&$_POST['credit_card_expiration_year']=="24"?"selected":"" ?>> 2024</option>
+                                        <option value="25" <?php echo !empty($_POST['credit_card_expiration_year'])&&$_POST['credit_card_expiration_year']=="25"?"selected":"" ?>> 2025</option>
+                                        <option value="26" <?php echo !empty($_POST['credit_card_expiration_year'])&&$_POST['credit_card_expiration_year']=="26"?"selected":"" ?>> 2026</option>
+                                        <option value="27" <?php echo !empty($_POST['credit_card_expiration_year'])&&$_POST['credit_card_expiration_year']=="27"?"selected":"" ?>> 2027</option>
+                                        <option value="28" <?php echo !empty($_POST['credit_card_expiration_year'])&&$_POST['credit_card_expiration_year']=="28"?"selected":"" ?>> 2028</option>
                                     </select>
                                 </div>
                                 <div class="form-group" id="credit_cards">
